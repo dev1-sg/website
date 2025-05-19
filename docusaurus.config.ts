@@ -36,11 +36,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // Serve the docs at the site's root
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/dev1-sg/website/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/', // you are serving docs at root
+          sidebarPath: require.resolve('./sidebars.ts'), // <-- this is required
+          editUrl: 'https://github.com/dev1-sg/website/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
