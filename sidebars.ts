@@ -4,7 +4,7 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     {
       type: 'doc',
-      id: 'intro', // MUST match the frontmatter ID in docs/intro.md
+      id: 'intro',
     },
   ],
 };

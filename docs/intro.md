@@ -1,6 +1,7 @@
 ---
 id: intro
-title: Introduction
+title: Welcome
 ---
+# Welcome to the Dev1.sg Docs
 
-# Introduction
+This is the homepage.
