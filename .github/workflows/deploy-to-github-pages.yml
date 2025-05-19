@@ -1,9 +1,9 @@
 ---
-name: 'deploy static content to Pages'
+name: 'deploy to pages'
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -13,41 +13,40 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
-env:
-  NODE_OPTIONS: --max-old-space-size=6144
 
 jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: 'set shell options globally'
+        run: set -euxo pipefail
+        shell: bash
+
+      - name: 'setup Node.js'
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22 # Use Node.js 18 here
+
+      - name: 'install dependencies'
+        run: npm install
+
+      - name: 'build site'
+        run: npm run build
+
   deploy:
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: 'checkout'
-        uses: actions/checkout@v3
-
-      - name: 'set up Node.js'
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: yarn
-
-      - name: 'install dependencies'
-        run: yarn install --frozen-lockfile --non-interactive
-
-      - name: 'build'
-        run: yarn build
-
-      - name: 'setup pages'
-        uses: actions/configure-pages@v3
-
-      - name: 'upload artifact'
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: build
-
-      - name: 'deploy to github pages'
+      - name: 'deploy to GitHub Pages'
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
