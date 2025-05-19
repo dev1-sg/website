@@ -17,7 +17,7 @@ concurrency:
 
 
 jobs:
-  build-push:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 'checkout'
