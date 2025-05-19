@@ -42,7 +42,21 @@ const config: Config = {
           editUrl:
             'https://github.com/dev1-sg/website/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/dev1-sg/website/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -117,7 +131,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} dev1-sg[dev1.sg], Inc. Built with ❤️.`,
+      copyright: `Copyright © ${new Date().getFullYear()} dev1.sg, Inc. Built with ❤️.`,
     },
     prism: {
       theme: prismThemes.github,
