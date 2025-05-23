@@ -48,7 +48,7 @@ const config = {
     // // Consider updating or adding a custom social card image relevant to your project
     // image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      // title: '',
+      title: '',
       logo: {
         // alt: '',
         src: 'img/logo.png',
