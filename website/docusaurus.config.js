@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Bash',
-  tagline: 'Bash',
+  // title: '',
+  // tagline: '',
   favicon: 'img/favicon.ico',
 
   // Corrected the URL to reflect the actual deployment location
@@ -17,8 +17,8 @@ const config = {
   // Adjusted baseUrl to ensure it ends with a slash for correct path resolution
   baseUrl: '/website/',
 
-  organizationName: 'dev1-sg', // Ensure this is your actual organization/user name
-  projectName: 'website', // Ensure this is your actual repo name
+  // organizationName: 'dev1-sg', // Ensure this is your actual organization/user name
+  // projectName: 'website', // Ensure this is your actual repo name
 
   onBrokenLinks: 'ignore', // Or 'warn' or 'ignore'
   onBrokenMarkdownLinks: 'warn',
@@ -48,9 +48,9 @@ const config = {
     // // Consider updating or adding a custom social card image relevant to your project
     // image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'dev1-sg',
+      // title: '',
       logo: {
-        alt: 'dev1-sg',
+        // alt: '',
         src: 'img/logo.png',
         href: '/website/Getting-Started',
       },
