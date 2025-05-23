@@ -52,7 +52,7 @@ const config = {
       logo: {
         alt: 'dev1-sg',
         src: 'img/logo.png',
-        href: '/website/intro',
+        href: '/website/Getting-Started',
       },
       items: [
         {
@@ -64,7 +64,7 @@ const config = {
         {
           // Update this URL to point to your actual GitLab repository
           href: 'https://github.com/dev1-sg/website',
-          label: 'GitLab',
+          label: 'GitHub',
           position: 'right',
         },
       ],
