@@ -52,7 +52,7 @@ const config = {
       logo: {
         // alt: '',
         src: 'img/logo.png',
-        href: '/website/Getting-Started',
+        href: '/website/intro',
       },
       items: [
         {
