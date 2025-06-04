@@ -1,5 +1,7 @@
 ---
 position: 1
+title: Introduction
+slug: intro
 ---
 
 ## Mission
